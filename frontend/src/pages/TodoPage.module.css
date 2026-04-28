@@ -1,0 +1,293 @@
+.page {
+  max-width: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.addBtn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.addBtn:hover {
+  background: #2563eb;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 7px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  background: white;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.filterActive {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.count {
+  margin-left: auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+}
+
+.todoCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+
+.todoCard:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.completed {
+  opacity: 0.6;
+}
+
+.completed .todoTitle {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 0;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.todoContent {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todoTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.todoTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.high { background: #fef2f2; color: #dc2626; }
+.medium { background: #fffbeb; color: #d97706; }
+.low { background: #f0fdf4; color: #16a34a; }
+
+.todoDesc {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.todoMeta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #cbd5e1;
+  padding: 4px;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  color: #ef4444;
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.modalHeader h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.modalHeader button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+.modalForm {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+}
+
+.input:focus {
+  border-color: #3b82f6;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.cancelBtn {
+  background: #f1f5f9;
+  color: #64748b;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.saveBtn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.saveBtn:hover {
+  background: #2563eb;
+}

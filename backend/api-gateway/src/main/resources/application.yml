@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: ${USER_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/api/users/**, /api/auth/**, /api/families/**
+        - id: calendar-service
+          uri: ${CALENDAR_SERVICE_URL:http://localhost:8082}
+          predicates:
+            - Path=/api/events/**
+        - id: todo-service
+          uri: ${TODO_SERVICE_URL:http://localhost:8083}
+          predicates:
+            - Path=/api/todos/**
+
+jwt:
+  secret: familycalendar-secret-key-2024-very-long-secret-for-hs256-algorithm
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
